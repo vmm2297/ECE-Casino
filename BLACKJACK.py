@@ -1,36 +1,16 @@
-#ECE Casino
+#ECE Casino: BLACKJACK
 #Hosted by ECE Undergradute Student Council at UCSD
 
-#Current Games:
-#	- BLACKJACK (Victor)
-#	- WAR (Chau)
-
 #Games are played in the terminal console.
+
 import random
 
-def enter_casino():
-	#lets player input name and choose game
-	print("Welcome to the ECE Casino!")
-	print("What is you name?")
-	user_name = raw_input(">")
-	print("Hi %s, what game do you want to play today?")%user_name.capitalize()
-	user_game = raw_input(">")
-	if user_game.lower() in ("blackjack","black jack","21"):
-		print("Gotcha! One game of BLACKJACK coming right up...")
-		play_blackjack()
-	else:
-		print("Sorry! We do not have that game yet. Please come back another day.")
-
-#main function to play blackjack
-def play_blackjack():	
+def play_blackjack():
 	#cards are dealt
-	deck = shuffle_deck()
-	player_hand = []
-	dealer_hand = []
-	player_hand.append(deck.pop())
-	dealer_hand.append(deck.pop())
-	player_hand.append(deck.pop())
-	dealer_hand.append(deck.pop())
+	player_hand.append(game_deck.pop())
+	dealer_hand.append(game_deck.pop())
+	player_hand.append(game_deck.pop())
+	dealer_hand.append(game_deck.pop())
 
 	#hands are shown, sums are computed
 	print("Your current hand is %s.") % str(player_hand)
@@ -104,5 +84,7 @@ def get_hand_sum(hand,dealer):
 		hand_sum = hand_sum + get_card_value(i,dealer)
 	return hand_sum
 
-#player enters the casino
-enter_casino()
+#initialize deck and hand variables (global)
+game_deck = shuffle_deck()
+player_hand = []
+dealer_hand = []
