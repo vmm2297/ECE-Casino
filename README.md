@@ -1,6 +1,6 @@
 # ECE Casino
-Hosted by the ECE Undergradute Student Council at UCSD
-Powered by PYTHON and GIT
+Hosted by the ECE Undergradute Student Council at UCSD.
+Powered by PYTHON and GIT.
 
 ## Current Games
 Games are played in the terminal console:
