@@ -18,6 +18,6 @@ user_game = raw_input(">")
 if user_game.lower() in ("blackjack","black jack","21"):
 	print("Gotcha! One game of BLACKJACK coming right up...")
 	import BLACKJACK
-	BLACKJACK.play_blackjack()
+	print(BLACKJACK.play_blackjack())
 else:
 	print("Sorry! We do not have that game yet. Please come back another day.")
