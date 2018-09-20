@@ -9,6 +9,7 @@
 
 #Player enters casino, inputs name, and chooses game.
 
+#Initial variables
 CASINO_TITLE = """
 ______ _____ ______    _____           _____ _____ _   _  ____  
 |  ____/ ____|  ____|  / ____|   /\    / ____|_   _| \ | |/ __ \ 
@@ -18,7 +19,6 @@ ______ _____ ______    _____           _____ _____ _   _  ____
 |______\_____|______|  \_____/_/    \_\_____/|_____|_| \_|\____/ 
 
 """
-
 BYE_TITLE = """
 ______     ________              ______     ________ 
 |  _ \ \   / /  ____|            |  _ \ \   / /  ____|
@@ -52,22 +52,27 @@ def main():
                     print("Please provide your name!")
 
     print("Hi %s, what game do you want to play today?" % user_name.capitalize())
+    
     print("Our current selection of games include:")
     
-    # +1 here and the -1 below to display "1,2,3" instead of "0,1,2"
-    for (i, game) in enumerate(current_games):
-            print("[%d] %s" % (i+1, game))
+    # Game options printed and indexed starting at 1 (with the 'start' parameter)
+    for (i, game) in enumerate(current_games,start=1):
+            print("[%d] %s" % (i, game))
 
-    user_game = int(raw_input("> ")) - 1
-
-    if user_game == 0:
-            print("Gotcha! One game of BLACKJACK coming right up...")
-            import BLACKJACK
-            print(BLACKJACK.play_blackjack())
-    elif user_game == num_games-1:
-    	    print("Thank you! Please come back another day.")
-    else:
-            print("Sorry! We do not have that game yet. Please come back another day.")
+    # Checking valid choice and starting up chosen game (or EXIT)
+    invalid_choice = True
+    while (invalid_choice):
+    	    user_game = raw_input("> ")
+            if user_game == "1":
+                    print("Gotcha! One game of BLACKJACK coming right up...")
+                    invalid_choice = False
+                    import BLACKJACK
+                    print(BLACKJACK.play_blackjack())
+            elif user_game == str(num_games):
+    	            print("Thank you! Please come back another day.")
+    	            invalid_choice = False
+            else:
+                    print("That is an invalid option! Please choose a valid option.")
     
     print(BYE_TITLE)
 
