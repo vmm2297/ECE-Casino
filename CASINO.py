@@ -40,11 +40,13 @@ def main():
 
     # Keep going until we get their name
     got_name = False
-    while not got_name:
+    while (not got_name):
             try:
                     user_name = raw_input("> ")
-                    if len(user_name) == 0:
-                            throw Exception()
+                    if (len(user_name) == 0):
+                            raise Exception()
+                    else:
+                    	    got_name = True
             except:
                     print("Please provide your name!")
 
@@ -52,7 +54,7 @@ def main():
     print("Our current selection of games include:")
     
     # +1 here and the -1 below to display "1,2,3" instead of "0,1,2"
-    for i, game in enumerate(current_games):
+    for (i, game) in enumerate(current_games):
             print("[%d] %s" % (i+1, game))
 
     user_game = int(raw_input("> ")) - 1
