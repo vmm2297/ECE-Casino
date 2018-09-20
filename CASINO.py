@@ -28,7 +28,8 @@ ______     ________              ______     ________
 |____/  |_|  |______|            |____/  |_|  |______|
 
 """
-current_games = ["BLACKJACK", "WAR (in progress)"]
+current_games = ["BLACKJACK", "WAR (in progress)", "EXIT CASINO (closes game)"]
+num_games = len(current_games)
 
 def main():
 
@@ -63,6 +64,8 @@ def main():
             print("Gotcha! One game of BLACKJACK coming right up...")
             import BLACKJACK
             print(BLACKJACK.play_blackjack())
+    elif user_game == num_games-1:
+    	    print("Thank you! Please come back another day.")
     else:
             print("Sorry! We do not have that game yet. Please come back another day.")
     
