@@ -15,3 +15,5 @@ Games are played in the terminal console:
 5. Navigate into the game folder with the command `cd ECE-Casino`.
 6. Start playing in the ECE Casino with the command `python CASINO.py`.
 7. HAVE FUN! WHOOO!!!
+
+This project is licensed under the terms of the MIT license.
