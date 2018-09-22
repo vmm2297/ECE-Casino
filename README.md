@@ -5,7 +5,7 @@ Powered by PYTHON and GIT.
 ## Current Games
 Games are played in the terminal console:
 1. BLACKJACK (Victor)
-2. WAR (Chau)
+2. WAR (in progress, Chau)
 
 ## How To Play
 1. Have PYTHON (version 2) and GIT installed. (Note: Git Bash will work as your terminal).
